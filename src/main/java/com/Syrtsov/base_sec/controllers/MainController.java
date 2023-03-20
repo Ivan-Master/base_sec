@@ -15,21 +15,21 @@ public class MainController {
     @Autowired
     private StudentRepo studentRepo;
 
-    @GetMapping("/greeting")
+    @GetMapping("/")
     public String greeting(@RequestParam(name="name",
             required = false, defaultValue = "World") String name, Model model)
     {
         model.addAttribute("name", name);
         return "greeting";
     }
-    @GetMapping("/")
+    @GetMapping("/main")
     public String main (Model model)
     {
         Iterable<Student> students = studentRepo.findAll();
         model.addAttribute("students", students);
         return "main";
     }
-    @PostMapping("/")
+    @PostMapping("/main")
     public String add(@RequestParam String text, @RequestParam Integer groupp, Model model){
         final Student student = new Student(text, groupp);
         studentRepo.save(student);

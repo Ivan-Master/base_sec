@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/greeting">Home</a>
+                <a class="nav-link" href="/">Home </a>
             </li>
-            <li>
-                <a class="nav-link" href="/">Main</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="/main">Main </a>
             </li>
         </ul>
     </div>
