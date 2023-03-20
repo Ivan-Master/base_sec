@@ -1,5 +1,5 @@
 package com.Syrtsov.base_sec.domain.entity;
-
+import com.Syrtsov.base_sec.domain.entity.User;
 import javax.persistence.*;
 
 @Entity
@@ -15,13 +15,26 @@ public class Student {
 
     @Column(name = "groupp")
     private Integer groupp;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "studentuser")
+    private User studentuser;
 
-    public Student(String name, Integer groupp) {
+    public String getStudentuser(){
+        return studentuser != null ? studentuser.getUsername(): "отсутствует";
+    }
+    public Student(String name, Integer groupp, User studentuser) {
         this.name = name;
         this.groupp = groupp;
+        this.studentuser = studentuser;
     }
     public Student() {
         name = "безымянный";
+    }
+
+
+
+    public void setStudentuser(User studentuser) {
+        this.studentuser = studentuser;
     }
 
     public Integer getGroup(){ return groupp; }
