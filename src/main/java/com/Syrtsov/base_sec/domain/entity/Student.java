@@ -22,14 +22,27 @@ public class Student {
     public String getStudentuser(){
         return studentuser != null ? studentuser.getUsername(): "отсутствует";
     }
-    public Student(String name, Integer groupp, User studentuser) {
+    private String avatarname;
+
+    public Student(String name, Integer groupp, User studentuser, String avatarname) {
         this.name = name;
         this.groupp = groupp;
         this.studentuser = studentuser;
+        this.avatarname = avatarname;
     }
     public Student() {
         name = "безымянный";
     }
+
+    public String getAvatarname(){
+        return avatarname;
+    }
+
+    public void setAvatarname(String avatarname) {
+        this.avatarname = avatarname;
+    }
+
+
 
 
 
