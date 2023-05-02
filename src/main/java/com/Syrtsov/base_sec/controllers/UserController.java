@@ -28,6 +28,7 @@ public class UserController {
     @GetMapping("{user}")
     public String userEditFrom(@PathVariable User user, Model model){
         model.addAttribute("user", user);
+        //model.addAttribute("roles", Role.ADMIN );
         model.addAttribute("roles", Role.values() );
         return "userEdit";
     }
